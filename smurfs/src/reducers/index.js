@@ -13,6 +13,11 @@ const initialState = {
   error: null
 };
 
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+  }
+};
+
 /*
   You'll only need one smurf reducer for this project.
   Feel free to export it as a default and import as rootReducer. 
