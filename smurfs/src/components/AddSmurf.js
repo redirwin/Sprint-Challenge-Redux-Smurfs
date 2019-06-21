@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { addSmurf } from "../actions";
 
 class AddSmurf extends React.Component {
   state = {
@@ -17,10 +20,20 @@ class AddSmurf extends React.Component {
     });
   };
 
+  submitSmurf = e => {
+    e.preventDefault();
+    const newSmurf = {
+      name: this.state.name,
+      age: this.state.age,
+      height: this.state.height
+    };
+    this.props.addSmurf(newSmurf);
+  };
+
   render() {
     return (
       <div className="form-container">
-        <form onSubmit={this.handleAddSubmit}>
+        <form onSubmit={this.submitSmurf}>
           <input
             onChange={this.handleChanges}
             placeholder="name"
@@ -46,4 +59,13 @@ class AddSmurf extends React.Component {
   }
 }
 
-export default AddSmurf;
+const mapStateToProps = state => ({
+  smurfs: state.smurfs
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { addSmurf }
+  )(AddSmurf)
+);
