@@ -7,7 +7,7 @@ class AddSmurf extends React.Component {
   state = {
     smurf: {
       name: "",
-      age: null,
+      age: 0,
       height: ""
     }
   };
@@ -15,6 +15,7 @@ class AddSmurf extends React.Component {
   handleChanges = e => {
     this.setState({
       smurf: {
+        ...this.state.smurf,
         [e.target.name]: e.target.value
       }
     });
@@ -23,11 +24,12 @@ class AddSmurf extends React.Component {
   submitSmurf = e => {
     e.preventDefault();
     const newSmurf = {
-      name: "dave",
-      age: 40,
-      height: "5"
+      name: this.state.smurf.name,
+      age: this.state.smurf.age,
+      height: this.state.smurf.height
     };
     this.props.addSmurf(newSmurf);
+    this.props.history.push("/");
   };
 
   render() {
