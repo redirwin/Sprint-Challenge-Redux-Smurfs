@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import SmurfListView from "./SmurfListView";
+import AddSmurf from "./SmurfListView";
+
 import "./App.css";
 /*
  to wire this component up you're going to need a few things.
