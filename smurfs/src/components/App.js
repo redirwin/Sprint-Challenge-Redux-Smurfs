@@ -16,6 +16,8 @@ class App extends Component {
           <div>Welcome to your Redux version of Smurfs!</div>
           <div>Start inside of your `src/index.js` file!</div>
           <div>Have fun!</div>
+          <Link to="/">Home</Link>
+          <Link to="/addsmurf">Add Smurf</Link>
           <Route exact path="/">
             <SmurfListView />
           </Route>
