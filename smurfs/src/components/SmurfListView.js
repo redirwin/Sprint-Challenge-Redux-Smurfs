@@ -6,7 +6,6 @@ import Smurf from "./Smurf";
 
 class SmurfListView extends React.Component {
   componentDidMount() {
-    // console.log("Did Mount!!");
     this.props.getSmurfList();
   }
 
