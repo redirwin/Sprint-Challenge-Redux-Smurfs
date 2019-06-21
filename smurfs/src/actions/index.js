@@ -16,6 +16,22 @@ export const getSmurfList = () => dispatch => {
     });
 };
 
+export const ADD_SMURF_START = "ADD_SMURF_START";
+export const ADD_SMURF_SUCCESS = "ADDH_SMURF_SUCCESS";
+export const ADD_SMURF_FAILURE = "ADD_SMURF_FAILURE";
+
+export const addSmurf = newSmurf => dispatch => {
+  dispatch({ type: FETCH_SMURFS_START });
+  return axios
+    .posth("http://localhost:3333/smurfs", newSmurf)
+    .then(res => {
+      dispatch({ type: ADD_SMURF_SUCCESS, payload: res });
+    })
+    .catch(err => {
+      dispatch({ type: ADD_SMURF_FAILURE, payload: err });
+    });
+};
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
