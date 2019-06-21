@@ -6,22 +6,18 @@ import Smurf from "./Smurf";
 
 class SmurfListView extends React.Component {
   componentDidMount() {
+    // console.log("Did Mount!!");
     this.props.getSmurfList();
   }
 
   render() {
-    return (
-      <div className="smurfs-list-wrapper">
-        {this.props.smurfs.map(smurf => {
-          return <Smurf key={smurf.name} smurf={smurf} />;
-        })}
-      </div>
-    );
+    console.log("HERE ARE THE SMURFS: ", this.props.smurfs);
+    return <div className="smurfs-list-wrapper" />;
   }
 }
 
 const mapStateToProps = state => ({
-  smurfs: state.reducer.smurfs
+  smurfs: state.smurfs
 });
 
 export default withRouter(
