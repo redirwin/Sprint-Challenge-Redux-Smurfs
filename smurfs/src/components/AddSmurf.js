@@ -11,7 +11,9 @@ class AddSmurf extends React.Component {
 
   handleChanges = e => {
     this.setState({
-      [e.target.name]: e.target.value
+      smurf: {
+        [e.target.name]: e.target.value
+      }
     });
   };
 
