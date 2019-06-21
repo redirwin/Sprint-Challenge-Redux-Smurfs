@@ -11,8 +11,13 @@ class SmurfListView extends React.Component {
   }
 
   render() {
-    console.log("HERE ARE THE SMURFS: ", this.props.smurfs);
-    return <div className="smurfs-list-wrapper" />;
+    return (
+      <div className="smurfs-list-wrapper">
+        {this.props.smurfs.map(smurf => {
+          return <Smurf key={smurf.name} smurf={smurf} />;
+        })}
+      </div>
+    );
   }
 }
 
