@@ -23,9 +23,9 @@ class AddSmurf extends React.Component {
   submitSmurf = e => {
     e.preventDefault();
     const newSmurf = {
-      name: this.state.name,
-      age: this.state.age,
-      height: this.state.height
+      name: "dave",
+      age: 40,
+      height: "5"
     };
     this.props.addSmurf(newSmurf);
   };
