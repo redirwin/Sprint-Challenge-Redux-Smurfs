@@ -23,8 +23,18 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+An action changes state. It's an object that has at least one property called type. When you dispatch an action, it calls a reducer.
+Reducers check the action and update state in the store using the payload that is passed in from the action.
+Store is the global holder of state. Actions call reducers, which then change the state within the store. Store can then be linked up to components to pass state as props directly to those components.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is held is store and can be used by any component that is hooked up to the store. Component states are local to that component only, meaning they cannot be used by other components unless they are passed down as props when those components are called.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Thunk is middleware that hangs out between the reducers and the actions. It can act as a mediator between them by passing through actions or, if if the action contains a function, it Thunk invokes the action and then passes the dispatch function as an argument.
 
 ## Project Set Up
 
@@ -80,9 +90,9 @@ return dispatch => {
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   }
 ];
@@ -113,15 +123,15 @@ Example of object created in Smurf DB:
 ```js
 [
   {
-    name: 'Brainey',
+    name: "Brainey",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 0
   },
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
@@ -173,9 +183,9 @@ Example:
 ```js
 output: [
   {
-    name: 'Sleepy',
+    name: "Sleepy",
     age: 200,
-    height: '5cm',
+    height: "5cm",
     id: 1
   }
 ];
